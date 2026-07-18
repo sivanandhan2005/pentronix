@@ -1,0 +1,164 @@
+/*  Pentronix QSS — Black + Neon-Green Hacking Terminal Theme  */
+
+/* ── Global ──────────────────────────────────────────────────── */
+
+* {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+}
+
+QMainWindow, QWidget {
+    background: #000000;
+    color: #00ff41;
+}
+
+/* ── Terminal Output Area ────────────────────────────────────── */
+
+QTextEdit#terminal_output {
+    background: #000000;
+    color: #00ff41;
+    border: none;
+    padding: 12px;
+    selection-background-color: #003300;
+    selection-color: #00ff41;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+QTextEdit#terminal_output QScrollBar:vertical {
+    background: #0a0a0a;
+    width: 8px;
+    border: none;
+}
+
+QTextEdit#terminal_output QScrollBar::handle:vertical {
+    background: #00ff41;
+    border-radius: 4px;
+    min-height: 30px;
+}
+
+QTextEdit#terminal_output QScrollBar::add-line:vertical,
+QTextEdit#terminal_output QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* ── Input Bar ───────────────────────────────────────────────── */
+
+QLineEdit#input_bar {
+    background: #0a0a0f;
+    color: #00ff41;
+    border: 1px solid #003300;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 14px;
+    selection-background-color: #003300;
+}
+
+QLineEdit#input_bar:focus {
+    border-color: #00ff41;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+
+QPushButton {
+    background: transparent;
+    color: #00ff41;
+    border: 1px solid #003300;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background: #001a00;
+    border-color: #00ff41;
+}
+
+QPushButton:pressed {
+    background: #003300;
+}
+
+QPushButton#mic_button {
+    border-radius: 24px;
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+    font-size: 20px;
+    border: 2px solid #333333;
+    background: #0a0a0f;
+}
+
+QPushButton#mic_button:checked {
+    border-color: #ff0040;
+    background: #1a0008;
+    color: #ff0040;
+}
+
+QPushButton#mic_button:hover {
+    border-color: #00ff41;
+}
+
+QPushButton#send_button {
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+    border-radius: 24px;
+    font-size: 18px;
+    border: 2px solid #003300;
+}
+
+QPushButton#send_button:hover {
+    background: #001a00;
+    border-color: #00ff41;
+}
+
+/* ── Confirmation Dialog ─────────────────────────────────────── */
+
+QFrame#confirm_frame {
+    background: #0f0f14;
+    border: 1px solid #ff6600;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+QPushButton#confirm_yes {
+    background: #003300;
+    border-color: #00ff41;
+    color: #00ff41;
+}
+
+QPushButton#confirm_yes:hover {
+    background: #004400;
+}
+
+QPushButton#confirm_no {
+    background: #1a0008;
+    border-color: #ff0040;
+    color: #ff0040;
+}
+
+QPushButton#confirm_no:hover {
+    background: #330011;
+}
+
+/* ── Status Bar ──────────────────────────────────────────────── */
+
+QLabel#status_label {
+    color: #555555;
+    font-size: 11px;
+    padding: 4px 8px;
+}
+
+/* ── Password Input ──────────────────────────────────────────── */
+
+QLineEdit#password_input {
+    background: #0a0a0f;
+    color: #ffaa00;
+    border: 1px solid #ffaa00;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 14px;
+}
